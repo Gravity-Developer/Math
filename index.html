@@ -1,0 +1,30 @@
+<!doctype HTML>
+<html>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<script src="js/aframe.min.js"></script>
+<script src="js/aframe-ar.js"></script>
+
+<body style="margin: 0px; overflow: hidden;">
+
+  <!-- set detectionMode and matrixCodeType to enable barcode marker detection and custom pattern files -->
+
+  <a-scene embedded vr-mode-ui="enabled: false;"
+    arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+
+    <a-assets>
+      <img id="arimage1" src="images/AR_IMAGE_1.png" />
+      <img id="arimage2" src="images/AR_IMAGE_2.png" />
+    </a-assets>
+
+    <a-marker type="pattern" url="data/kanji.patt">
+      <a-plane position="-0.75 0 0" rotation="-90 0 0" height="1.5" width="1.0" material="src: #arimage1;"></a-plane>
+      <a-plane position="0.75 0 0" rotation="-90 0 0" height="1.5" width="1.0" material="src: #arimage2;"></a-plane>
+
+
+    </a-marker>
+    <a-entity camera></a-entity>
+
+  </a-scene>
+</body>
+
+</html>
